@@ -1,0 +1,12 @@
+{
+  "env": "development",
+  "apiUrl": "https://localhost:8000",
+  "app": {
+    "env": "development",
+    "ga": "UA-115101628-1",
+    "chrome_screensharing_extension": {
+      "extensionId": "ppjonilkogajjgdpjgmbcmpcghhnonhm",
+      "link": "https://chrome.google.com/webstore/detail/ppjonilkogajjgdpjgmbcmpcghhnonhm"
+    }
+  }
+}

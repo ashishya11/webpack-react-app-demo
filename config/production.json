@@ -1,0 +1,11 @@
+{
+  "env": "production",
+  "app": {
+    "env": "production",
+    "ga": "UA-116200531-1",
+    "chrome_screensharing_extension": {
+      "extensionId": "elapockefjkpomookejblndkhpdcjfpb",
+      "link": "https://chrome.google.com/webstore/detail/elapockefjkpomookejblndkhpdcjfpb"
+    }
+  }
+}

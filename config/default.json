@@ -1,0 +1,32 @@
+{
+  "env": "default",
+  "publicPath": "localhost:4000",
+  "host": "localhost",
+  "port": "4000",
+  "jsSourcePath": "src/js",
+  "optimization": {
+    "commonMinCount": 3,
+    "cssExclusion": true
+  },
+  "html": [
+    {
+      "name": "homepage",
+      "title": "webpack-react-app-demo",
+      "template": "_default.html",
+      "filename": "index.html",
+      "favicon": "favicon.ico",
+      "inject": "body"
+    },
+    {
+      "name": "getSourceId",
+      "title": "getSourceId",
+      "template": "_getSourceId.html",
+      "filename": "getSourceId.html",
+      "favicon": "favicon.ico",
+      "inject": false
+    }
+  ],
+  "app": {
+    "description": "config inside 'app' will be injected to your frontend code automatically"
+  }
+}
