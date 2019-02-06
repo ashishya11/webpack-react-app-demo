@@ -15,6 +15,11 @@ module.exports = (
                     path="/"
                     component={HomeRouteHandler}
                 />
+                <Route
+                    exact
+                    path="/testing"
+                    component={HomeRouteHandler}
+                />
             </Switch>
         </main>
     </div>
