@@ -3,6 +3,7 @@ import { Switch } from 'react-router-dom';
 import { Route } from 'react-router';
 
 import HomeRouteHandler from '../views/home/index';
+import CalenderRouteHandler from '../views/calender/index';
 
 const styles = require('../../style/Style.scss');
 
@@ -18,7 +19,7 @@ module.exports = (
                 <Route
                     exact
                     path="/testing"
-                    component={HomeRouteHandler}
+                    component={CalenderRouteHandler}
                 />
             </Switch>
         </main>
