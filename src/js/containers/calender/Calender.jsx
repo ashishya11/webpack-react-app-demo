@@ -2,28 +2,40 @@ import React, { PureComponent } from 'react';
 import _ from 'lodash';
 import styles from './Calender.scss';
 
-import BigCalendar from 'react-big-calendar'
-import moment from 'moment'
+import localizer from 'react-big-calendar/lib/localizers/moment';
+import moment from 'moment';
 
-import events from './BigCalender/event';
-import dates from './BigCalender/dates';
+
+import Basic from '../../components/calender/demos/basic';
+
+
 require('react-big-calendar/lib/css/react-big-calendar.css');
+
+const globalizeLocalizer = localizer(moment);
 
 class Calender extends PureComponent {
 
+    state = {
+        selected: 'basic',
+        events: [
+            {
+                start: new Date(),
+                end: new Date(moment().add(1, "days")),
+                title: "Some title"
+            }
+        ]
+    };
+
+
     render() {
-        const localizer = BigCalendar.momentLocalizer(moment);
+        let selected = this.state.selected;
+        let Current = { basic: Basic }[selected];
 
         return (
             <div className={styles.home}>
                 <h1 className={styles.heading}>Welcome to the Calender!</h1>
                 <div className={styles.demo}>
-                    <BigCalendar
-                        localizer={localizer}
-                        events={events}
-                        startAccessor="start"
-                        endAccessor="end"
-                    />
+                    <Current localizer={globalizeLocalizer} />
                 </div>
             </div>
         );
