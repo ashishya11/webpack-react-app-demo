@@ -1,8 +1,6 @@
-import React from 'react'
-import BigCalendar from 'react-big-calendar'
-import events from '../events'
-import ExampleControlSlot from '../ExampleControlSlot'
-
+import React from 'react';
+import BigCalendar from 'react-big-calendar';
+import events from '../../../containers/calender/BigCalender/event';
 const propTypes = {}
 
 class Selectable extends React.Component {
@@ -30,24 +28,17 @@ class Selectable extends React.Component {
   render() {
     const { localizer } = this.props
     return (
-      <>
-        <ExampleControlSlot.Entry waitForOutlet>
-          <strong>
-            Click an event to see more info, or drag the mouse over the calendar
-            to select a date/time range.
-          </strong>
-        </ExampleControlSlot.Entry>
-        <BigCalendar
-          selectable
-          localizer={localizer}
-          events={this.state.events}
-          defaultView={BigCalendar.Views.WEEK}
-          scrollToTime={new Date(1970, 1, 1, 6)}
-          defaultDate={new Date(2015, 3, 12)}
-          onSelectEvent={event => alert(event.title)}
-          onSelectSlot={this.handleSelect}
-        />
-      </>
+      <BigCalendar
+        selectable
+        localizer={localizer}
+        events={this.state.events}
+        defaultView={BigCalendar.Views.MONTH}
+        scrollToTime={new Date(1970, 1, 1, 6)}
+        // defaultDate={new Date(2019, 3, 12)}
+        onSelectEvent={event => alert(event.title)}
+        onSelectSlot={this.handleSelect}
+        style={{ height: 'calc(100vh - 140px)' }}
+      />
     )
   }
 }

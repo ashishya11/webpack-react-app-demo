@@ -7,6 +7,7 @@ import moment from 'moment';
 
 
 import Basic from '../../components/calender/demos/basic';
+import Selectable from '../../components/calender/demos/selectable';
 
 
 require('react-big-calendar/lib/css/react-big-calendar.css');
@@ -16,7 +17,7 @@ const globalizeLocalizer = localizer(moment);
 class Calender extends PureComponent {
 
     state = {
-        selected: 'basic',
+        selected: 'selectable',
         events: [
             {
                 start: new Date(),
@@ -29,7 +30,7 @@ class Calender extends PureComponent {
 
     render() {
         let selected = this.state.selected;
-        let Current = { basic: Basic }[selected];
+        let Current = { basic: Basic, selectable: Selectable }[selected];
 
         return (
             <div className={styles.home}>
