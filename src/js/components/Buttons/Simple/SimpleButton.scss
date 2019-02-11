@@ -1,0 +1,32 @@
+@import "../../../../style/configs/variables.scss";
+
+.btn {
+    padding: 0;
+
+    color: $steel !important;
+    font-family: $font-family-base;
+    font-size: 14px;
+    line-height: 19px;
+    text-transform: none;
+    text-align: center;
+    border-radius: 4px !important;
+    transition: all 250ms $transition-timing-function 0ms;
+    user-select: none;
+
+    &:hover {
+        color: rgba($steel, 0.7) !important;
+    }
+
+    &:disabled {
+        opacity: 0.7;
+        cursor: default;
+    }
+
+    &::-moz-focus-inner {
+        border: none;
+    }
+}
+
+.link {
+    text-decoration: none;
+}

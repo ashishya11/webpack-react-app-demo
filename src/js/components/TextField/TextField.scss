@@ -1,0 +1,89 @@
+@import "../../../style/configs/variables.scss";
+
+.root {
+    font-family: $font-family-base !important;
+
+    &::before,
+    &::after {
+        content: none !important;
+    }
+
+    .input {
+        display: block;
+
+        height: initial !important;
+        min-height: 17px;
+        padding: 8px 14px 7px;
+
+        font-size: 12px;
+        line-height: 17px;
+        text-align: left;
+        color: $charcoal-grey;
+        font-family: $font-family-base;
+
+        background-color: rgba($steel, 0.12);
+        border: 1px solid transparent;
+        border-radius: 4px;
+
+        resize: none;
+        outline: none;
+        box-shadow: none !important;
+        transition: border-color 250ms $transition-timing-function 0ms, background-color 250ms $transition-timing-function 0ms;
+
+        &:focus {
+            border-color: rgba($steel, 0.5);
+            background-color: rgba($steel, 0.06) !important;
+            border-radius: 4px !important;
+
+            & + .icon {
+                color: rgba($steel, 0.5);
+            }
+        }
+
+        &::placeholder {
+            color: $cool-grey;
+        }
+
+        &.hasIcon {
+            padding-right: 32px;
+        }
+
+        &[type="search"] {
+            appearance: textfield;
+            &::-webkit-search-decoration,
+            &::-webkit-search-cancel-button,
+            &::-webkit-search-results-button,
+            &::-webkit-search-results-decoration {
+                display: none;
+            }
+        }
+    }
+
+    &.error {
+        .input {
+            background-color: rgba($scarlet, 0.14) !important;
+            border-color: $scarlet;
+            color: $scarlet;
+
+            &::placeholder {
+                color: $scarlet;
+            }
+
+            & + .icon {
+                color: $scarlet;
+            }
+        }
+    }
+
+    .icon {
+        width: 21px;
+        height: 21px;
+        position: absolute;
+        right: 9px;
+        top: 50%;
+        transform: translateY(-50%);
+        pointer-events: none;
+        color: $silver;
+        transition: color 250ms $transition-timing-function, fill 250ms $transition-timing-function;
+    }
+}

@@ -1,0 +1,25 @@
+.submitBtn {
+  text-align: right;
+  padding-top: 10px;
+  &:hover {
+    color: green;
+  }
+}
+.formEvent {
+  .eventName {
+    margin-bottom: 4px;
+  }
+  .eventTimeSlot {
+    display: inline-block;
+    width: 100%;
+    .eventStartTime {
+      width: 49%;
+      margin-bottom: 2px;
+      float: left;
+    }
+    .eventEndTime {
+      width: 49%;
+      float: right;
+    }
+  }
+}

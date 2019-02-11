@@ -6,7 +6,10 @@ class Home extends PureComponent {
     render() {
         return (
             <div className={styles.home}>
-                <h1 className={styles.heading}>Welcome to the HomePage!</h1>
+                <div className={styles.heading}>
+                    <h1>Welcome to the HomePage!</h1>
+                    <a href={'/testing'}>Go to the Calendar</a>
+                </div>
             </div>
         );
     }
