@@ -1,3 +1,7 @@
+.addBtn {
+  margin-bottom: 5px;
+  direction: rtl;
+}
 .submitBtn {
   text-align: right;
   padding-top: 10px;
@@ -22,4 +26,15 @@
       float: right;
     }
   }
+}
+
+.showEventStartTime {
+  width: 51%;
+  margin-bottom: 5px;
+  float: left;
+}
+
+.showEventEndTime {
+  width: 48%;
+  float: right;
 }
