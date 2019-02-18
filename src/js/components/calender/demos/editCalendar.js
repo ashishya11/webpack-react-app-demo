@@ -23,6 +23,7 @@ class Selectable extends React.Component {
             viewEvent: '',
             startTime: '',
             endTime: '',
+            temp: '',
         }
     }
 
@@ -106,6 +107,7 @@ class Selectable extends React.Component {
     }
 
     createEvent = () => {
+        const month = this.state.start.getMonth();
         const title = this.state.title;
         const start = this.dateTimeBindingFormation(this.state.start, this.state.startTime);
         const end = this.dateTimeBindingFormation(this.state.end, this.state.endTime);
@@ -118,7 +120,9 @@ class Selectable extends React.Component {
                         end,
                         title,
                     },
+
                 ],
+                temp: month,
             }, () => {
                 this.setState({
                     handleModel: false,
@@ -142,6 +146,48 @@ class Selectable extends React.Component {
         })
     }
 
+    eevent = (event) => {
+        debugger
+        console.log(event);
+        const month = event.getMonth();
+        let start = new Date();
+        start = start.setFullYear(event.getFullYear());
+        start = new Date(start);
+        start = start.setMonth(event.getMonth());
+        start = new Date(start);
+        let end = new Date();
+        end = end.setFullYear(event.getFullYear());
+        end = new Date(end);
+        end = end.setMonth(event.getMonth());
+        end = new Date(end);
+        const title = "temporary Event";
+        if (this.state.temp > month && month === 0) {
+            this.setState({
+                events: [
+                    ...this.state.events,
+                    {
+                        start,
+                        end,
+                        title,
+                    },
+                ],
+                temp: month,
+            })
+        } else if (this.state.temp < month) {
+            this.setState({
+                events: [
+                    ...this.state.events,
+                    {
+                        start,
+                        end,
+                        title,
+                    },
+                ],
+                temp: month,
+            })
+        }
+    }
+
     render() {
         const { localizer } = this.props
         return (
@@ -163,6 +209,7 @@ class Selectable extends React.Component {
                     scrollToTime={new Date(1970, 1, 1, 6)}
                     onSelectEvent={event => this.showEvent(event)}
                     onSelectSlot={this.handleOpen}
+                    onNavigate={event => this.eevent(event)}
                     style={{ height: 'calc(100vh - 165px)' }}
                 />
                 <BaseDialog open={this.state.handleModel} onClose={this.handleClose}>
