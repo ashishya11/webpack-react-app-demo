@@ -4,6 +4,7 @@ import { Route } from 'react-router';
 
 import HomeRouteHandler from '../views/home/index';
 import CalenderRouteHandler from '../views/calender/index';
+import MapRouteHandler from '../views/map/index';
 
 const styles = require('../../style/Style.scss');
 
@@ -20,6 +21,11 @@ module.exports = (
                     exact
                     path="/testing"
                     component={CalenderRouteHandler}
+                />
+                <Route
+                    exact
+                    path="/map"
+                    component={MapRouteHandler}
                 />
             </Switch>
         </main>

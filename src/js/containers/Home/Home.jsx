@@ -8,7 +8,8 @@ class Home extends PureComponent {
             <div className={styles.home}>
                 <div className={styles.heading}>
                     <h1>Welcome to the HomePage!</h1>
-                    <a href={'/testing'}>Go to the Calendar</a>
+                    <a href={'/testing'}>Go to the Calendar</a><br />
+                    <a href={'/map'}>Go to the Map</a>
                 </div>
             </div>
         );

@@ -1,4 +1,5 @@
 import React from 'react';
+import Checkbox from 'rc-checkbox';
 import BigCalendar from 'react-big-calendar';
 import events from '../../../containers/calender/BigCalender/event';
 import { format } from 'date-fns';
@@ -6,6 +7,7 @@ import { BaseDialog } from '../../Base';
 import { TextField } from '../../TextField';
 import { BaseButton } from '../../Buttons/Base';
 import styles from '../../../../style/main.scss';
+import 'rc-checkbox/assets/index.css';
 
 const propTypes = {}
 
@@ -17,13 +19,24 @@ class Selectable extends React.Component {
             events: events,
             showModel: false,
             handleModel: false,
+            repeated: false,
             title: '',
             start: '',
             end: '',
+            duration: '',
             viewEvent: '',
             startTime: '',
             endTime: '',
             temp: '',
+            selectedWeek: {
+                mon: false,
+                tue: false,
+                wed: false,
+                thu: false,
+                fri: false,
+                sat: false,
+                sun: false,
+            }
         }
     }
 
@@ -188,8 +201,29 @@ class Selectable extends React.Component {
         }
     }
 
+    onChange = (e) => {
+        // console.log('Checkbox checked:', (e.target.checked));
+        this.setState({
+            repeated: e.target.checked
+        })
+    }
+
+    handleCheckBox = key => e => {
+        debugger
+        const day = `${key}`;
+        // console.log('Checkbox checked:', (e.target.checked));
+        this.setState(currentState => {
+            const { selectedWeek } = currentState;
+            selectedWeek[`${key}`] = e.target.checked;
+            return currentState;
+        }, () => {
+            console.log(this.state);
+        });
+    }
+
     render() {
         const { localizer } = this.props
+        const { repeated, selectedWeek } = this.state;
         return (
             <div>
                 <div className={styles.addBtn}>
@@ -280,6 +314,236 @@ class Selectable extends React.Component {
                                 value={this.formatTimeDisplay(this.state.viewEvent.end)}
                             />
                         </div>
+                    </div>
+                </BaseDialog>
+                <BaseDialog open={true} title={<u>Select the Appointment Style</u>}>
+                    <div className={styles.repeatedDayOption}>
+                        <div className={styles.repeatedDayOptionName}>
+                            Duration
+                        </div>
+                        <div style={{ width: '50%', display: 'inline-flex' }}>
+                            <TextField
+                                type="text"
+                                value={this.state.duration}
+                                placeholder={'Time Duration'}
+                                onChange={this.handleInputTimeChange('duration')}
+                            />
+                        </div>
+                    </div>
+                    <div className={styles.repeatedDayOption}>
+                        <div className={styles.repeatedDayOptionName}>
+                            Repeated Days
+                        </div>
+                        <div className={styles.repeatedDayOptionValue}>
+                            <Checkbox
+                                onChange={this.onChange}
+                            />
+                        </div>
+                    </div>
+                    {repeated &&
+                        <div>
+                            <hr />
+                            <div className={styles.repetedDaySelectionForm}>
+                                <div className={styles.dayName}>Monday</div>
+                                <div className={styles.dayNameValue}>
+                                    <Checkbox
+                                        onChange={this.handleCheckBox('mon')}
+                                    />
+                                </div>
+                            </div>
+                            {selectedWeek.mon &&
+                                <div style={{ marginBottom: '5px' }}>
+                                    <div className={styles.fromTime}>
+                                        <TextField
+                                            type="text"
+                                            value={this.state.duration}
+                                            placeholder={'Time Duration'}
+                                            onChange={this.handleInputTimeChange('duration')}
+                                        />
+                                    </div>
+                                    <div className={styles.toTime}>
+                                        <TextField
+                                            type="text"
+                                            value={this.state.duration}
+                                            placeholder={'Time Duration'}
+                                            onChange={this.handleInputTimeChange('duration')}
+                                        />
+                                    </div>
+                                </div>}
+                            <div className={styles.repetedDaySelectionForm}>
+                                <div className={styles.dayName}>Tuesday</div>
+                                <div className={styles.dayNameValue}>
+                                    <Checkbox
+                                        onChange={this.handleCheckBox('tue')}
+                                    />
+                                </div>
+                            </div>
+                            {selectedWeek.tue &&
+                                <div style={{ marginBottom: '5px' }}>
+                                    <div className={styles.fromTime}>
+                                        <TextField
+                                            type="text"
+                                            value={this.state.duration}
+                                            placeholder={'Time Duration'}
+                                            onChange={this.handleInputTimeChange('duration')}
+                                        />
+                                    </div>
+                                    <div className={styles.toTime}>
+                                        <TextField
+                                            type="text"
+                                            value={this.state.duration}
+                                            placeholder={'Time Duration'}
+                                            onChange={this.handleInputTimeChange('duration')}
+                                        />
+                                    </div>
+                                </div>}
+                            <div className={styles.repetedDaySelectionForm}>
+                                <div className={styles.dayName}>Wednesday</div>
+                                <div className={styles.dayNameValue}>
+                                    <Checkbox
+                                        onChange={this.handleCheckBox('wed')}
+                                    />
+                                </div>
+                            </div>
+                            {selectedWeek.wed &&
+                                <div style={{ marginBottom: '5px' }}>
+                                    <div className={styles.fromTime}>
+                                        <TextField
+                                            type="text"
+                                            value={this.state.duration}
+                                            placeholder={'Time Duration'}
+                                            onChange={this.handleInputTimeChange('duration')}
+                                        />
+                                    </div>
+                                    <div className={styles.toTime}>
+                                        <TextField
+                                            type="text"
+                                            value={this.state.duration}
+                                            placeholder={'Time Duration'}
+                                            onChange={this.handleInputTimeChange('duration')}
+                                        />
+                                    </div>
+                                </div>}
+                            <div className={styles.repetedDaySelectionForm}>
+                                <div className={styles.dayName}>Thrusday</div>
+                                <div className={styles.dayNameValue}>
+                                    <Checkbox
+                                        onChange={this.handleCheckBox('thu')}
+                                    />
+                                </div>
+                            </div>
+                            {selectedWeek.thu &&
+                                <div style={{ marginBottom: '5px' }}>
+                                    <div className={styles.fromTime}>
+                                        <TextField
+                                            type="text"
+                                            value={this.state.duration}
+                                            placeholder={'Time Duration'}
+                                            onChange={this.handleInputTimeChange('duration')}
+                                        />
+                                    </div>
+                                    <div className={styles.toTime}>
+                                        <TextField
+                                            type="text"
+                                            value={this.state.duration}
+                                            placeholder={'Time Duration'}
+                                            onChange={this.handleInputTimeChange('duration')}
+                                        />
+                                    </div>
+                                </div>}
+                            <div className={styles.repetedDaySelectionForm}>
+                                <div className={styles.dayName}>Friday</div>
+                                <div className={styles.dayNameValue}>
+                                    <Checkbox
+                                        onChange={this.handleCheckBox('fri')}
+                                    />
+                                </div>
+                            </div>
+                            {selectedWeek.fri &&
+                                <div style={{ marginBottom: '5px' }}>
+                                    <div className={styles.fromTime}>
+                                        <TextField
+                                            type="text"
+                                            value={this.state.duration}
+                                            placeholder={'Time Duration'}
+                                            onChange={this.handleInputTimeChange('duration')}
+                                        />
+                                    </div>
+                                    <div className={styles.toTime}>
+                                        <TextField
+                                            type="text"
+                                            value={this.state.duration}
+                                            placeholder={'Time Duration'}
+                                            onChange={this.handleInputTimeChange('duration')}
+                                        />
+                                    </div>
+                                </div>}
+                            <div className={styles.repetedDaySelectionForm}>
+                                <div className={styles.dayName}>Saturday</div>
+                                <div className={styles.dayNameValue}>
+                                    <Checkbox
+                                        onChange={this.handleCheckBox('sat')}
+                                    />
+                                </div>
+                            </div>
+                            {selectedWeek.sat &&
+                                <div style={{ marginBottom: '5px' }}>
+                                    <div className={styles.fromTime}>
+                                        <TextField
+                                            type="text"
+                                            value={this.state.duration}
+                                            placeholder={'Time Duration'}
+                                            onChange={this.handleInputTimeChange('duration')}
+                                        />
+                                    </div>
+                                    <div className={styles.toTime}>
+                                        <TextField
+                                            type="text"
+                                            value={this.state.duration}
+                                            placeholder={'Time Duration'}
+                                            onChange={this.handleInputTimeChange('duration')}
+                                        />
+                                    </div>
+                                </div>}
+                            <div className={styles.repetedDaySelectionForm}>
+                                <div className={styles.dayName}>Sunday</div>
+                                <div className={styles.dayNameValue}>
+                                    <Checkbox
+                                        onChange={this.handleCheckBox('sun')}
+                                    />
+                                </div>
+                            </div>
+                            {selectedWeek.sun &&
+                                <div style={{ marginBottom: '5px' }}>
+                                    <div className={styles.fromTime}>
+                                        <TextField
+                                            type="text"
+                                            value={this.state.duration}
+                                            placeholder={'Time Duration'}
+                                            onChange={this.handleInputTimeChange('duration')}
+                                        />
+                                    </div>
+                                    <div className={styles.toTime}>
+                                        <TextField
+                                            type="text"
+                                            value={this.state.duration}
+                                            placeholder={'Time Duration'}
+                                            onChange={this.handleInputTimeChange('duration')}
+                                        />
+                                    </div>
+                                </div>}
+                        </div>}
+                    {!repeated &&
+                        <div className={styles.calenderView}>
+                            
+                        </div>}
+                    <div className={styles.btnSubmitRepeatedDate}>
+                        <BaseButton
+                            height="thin"
+                            size="tiny"
+                            color="primary"
+                        >{'Submit'}
+                        </BaseButton>
                     </div>
                 </BaseDialog>
             </div>

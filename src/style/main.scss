@@ -38,3 +38,52 @@
   width: 48%;
   float: right;
 }
+
+.repetedDaySelectionForm {
+  height: 25px;
+  .dayName {
+    display: inline-flex;
+    width: 50%;
+  }
+  .dayNameValue {
+    display: inline-flex;
+    width: 50%;
+    vertical-align: middle;
+    direction: rtl;
+  }
+}
+
+.repeatedDayOption {
+  text-align: justify;
+  margin-bottom: 15px;
+  .repeatedDayOptionName {
+    display: inline-flex;
+    width: 50%;
+  }
+  .repeatedDayOptionValue {
+    width: 50%;
+    display: inline-flex;
+    vertical-align: middle;
+    direction: rtl;
+  }
+}
+
+.btnSubmitRepeatedDate {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.fromTime {
+  display: inline-flex;
+  width: 48%;
+  margin-right: 5px;
+}
+
+.toTime {
+  display: inline-flex;
+  width: 50%;
+}
+
+.calenderView{
+  text-align: center;
+}
