@@ -1,7 +1,7 @@
 {
   "env": "default",
-  "publicPath": "localhost:4000",
-  "host": "localhost",
+  "publicPath": "http://18.224.146.61:4000",
+  "host": "18.224.146.61",
   "port": "4000",
   "jsSourcePath": "src/js",
   "optimization": {

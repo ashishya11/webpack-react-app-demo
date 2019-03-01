@@ -2,9 +2,9 @@ const shell = require('shelljs');
 const config = require('config');
 const colors = require('colors');
 
-const host = config.get('host') || 'localhost';
+const host = config.get('host') || 'http://18.224.146.61';
 const port = config.get('port') || '4000';
-
+console.log(host,port);
 const option = process.argv[2];
 
 switch (option) {

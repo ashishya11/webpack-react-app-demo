@@ -1,0 +1,20 @@
+{
+  "app": {
+    "js": "/assets/app-453082ad27fbc786abcb.js",
+    "css": "/assets/app-453082ad27fbc786abcb.css"
+  },
+  "common": {
+    "js": "/assets/common-453082ad27fbc786abcb.js"
+  },
+  "": {
+    "jpg": "/assets/ce8698822f842586c3458b3cd51391d0.jpg",
+    "ico": "/favicon.ico",
+    "html": [
+      "/index.html",
+      "/getSourceId.html"
+    ]
+  },
+  "metadata": {
+    "version": "1.0.0"
+  }
+}
