@@ -1,0 +1,89 @@
+.addBtn {
+  margin-bottom: 5px;
+  direction: rtl;
+}
+.submitBtn {
+  text-align: right;
+  padding-top: 10px;
+  &:hover {
+    color: green;
+  }
+}
+.formEvent {
+  .eventName {
+    margin-bottom: 4px;
+  }
+  .eventTimeSlot {
+    display: inline-block;
+    width: 100%;
+    .eventStartTime {
+      width: 49%;
+      margin-bottom: 2px;
+      float: left;
+    }
+    .eventEndTime {
+      width: 49%;
+      float: right;
+    }
+  }
+}
+
+.showEventStartTime {
+  width: 51%;
+  margin-bottom: 5px;
+  float: left;
+}
+
+.showEventEndTime {
+  width: 48%;
+  float: right;
+}
+
+.repetedDaySelectionForm {
+  height: 25px;
+  .dayName {
+    display: inline-flex;
+    width: 50%;
+  }
+  .dayNameValue {
+    display: inline-flex;
+    width: 50%;
+    vertical-align: middle;
+    direction: rtl;
+  }
+}
+
+.repeatedDayOption {
+  text-align: justify;
+  margin-bottom: 15px;
+  .repeatedDayOptionName {
+    display: inline-flex;
+    width: 50%;
+  }
+  .repeatedDayOptionValue {
+    width: 50%;
+    display: inline-flex;
+    vertical-align: middle;
+    direction: rtl;
+  }
+}
+
+.btnSubmitRepeatedDate {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.fromTime {
+  display: inline-flex;
+  width: 48%;
+  margin-right: 5px;
+}
+
+.toTime {
+  display: inline-flex;
+  width: 50%;
+}
+
+.calenderView{
+  text-align: center;
+}

@@ -1,5 +1,6 @@
 {
   "app": {
+<<<<<<< HEAD
     "js": "/assets/app-453082ad27fbc786abcb.js",
     "css": "/assets/app-453082ad27fbc786abcb.css"
   },
@@ -8,6 +9,16 @@
   },
   "": {
     "jpg": "/assets/ce8698822f842586c3458b3cd51391d0.jpg",
+=======
+    "js": "/assets/app-d1ce8a7804b64ccdf4f2.js",
+    "css": "/assets/app-d1ce8a7804b64ccdf4f2.css"
+  },
+  "common": {
+    "js": "/assets/common-d1ce8a7804b64ccdf4f2.js"
+  },
+  "": {
+    "jpg": "/assets/619dbb180a0d8e55e7ad4fd9b0818874.jpg",
+>>>>>>> 7e1ca3970694b22dc2b82a3c16af4dd3a2be8643
     "ico": "/favicon.ico",
     "html": [
       "/index.html",

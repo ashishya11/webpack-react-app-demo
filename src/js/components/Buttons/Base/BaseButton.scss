@@ -1,0 +1,98 @@
+@import "../../../../style/configs/variables.scss";
+
+@mixin addColor($bg-color, $bg-color-hover, $text-color, $text-color-hover: $text-color) {
+  color: $text-color !important;
+  background-color: $bg-color !important;
+
+  &:hover {
+    color: $text-color-hover !important;
+    background-color: $bg-color-hover !important;
+  }
+}
+
+.btn {
+  padding-left: 18px;
+  padding-right: 18px;
+
+  color: #fff;
+  font-family: $font-family-base;
+  text-transform: none;
+  text-align: center;
+  border-radius: 4px !important;
+  transition: all 250ms $transition-timing-function 0ms;
+  user-select: none;
+
+  &:disabled {
+    opacity: 0.7;
+    cursor: default;
+  }
+
+  &::-moz-focus-inner {
+    border: none;
+  }
+}
+
+.link {
+  text-decoration: none;
+}
+
+.color-default {
+  @include addColor($btn-default-bg-color, $btn-default-bg-color-hover, $btn-default-text-color, $btn-default-text-color-hover);
+}
+
+.color-secondary {
+  @include addColor($btn-secondary-bg-color, $btn-secondary-bg-color-hover, $btn-secondary-text-color);
+}
+
+.color-blue {
+  @include addColor($btn-blue-bg-color, $btn-blue-bg-color-hover, $btn-blue-text-color);
+}
+
+.color-primary {
+  @include addColor($btn-primary-bg-color, $btn-primary-bg-color-hover, $btn-primary-text-color);
+}
+
+.color-danger {
+  @include addColor($btn-danger-bg-color, $btn-danger-bg-color-hover, $btn-danger-text-color);
+}
+
+.color-paypal {
+  @include addColor($btn-paypal-bg-color, $btn-paypal-bg-color-hover, $btn-paypal-text-color);
+}
+
+.size-tiny {
+  min-width: 95px!important;
+}
+
+.size-small {
+  min-width: 128px !important;
+}
+
+.size-medium {
+  min-width: 158px !important;
+}
+
+.size-large {
+  min-width: 232px !important;
+}
+
+.size-full {
+  width: 100%;
+}
+
+.height-thin {
+  padding: 11px;
+  font-size: 13px;
+  line-height: 10px;
+}
+
+.height-default {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  font-size: 14px;
+  line-height: 19px;
+}
+
+.link {
+  text-decoration: none;
+}

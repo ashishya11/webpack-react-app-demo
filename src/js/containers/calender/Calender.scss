@@ -1,0 +1,15 @@
+.home {
+  color: inherit;
+  min-height: 100vh;
+  background: url("../../../assets/img/home.jpg") no-repeat 50% 0 / 100%, #fff;
+  background: url("../../../assets/img/home.jpg") no-repeat 50% 0 / 100vmax, #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 0 10px;
+  .heading {
+    text-align: center;
+  }
+  .demo {
+    min-height: 200px;
+  }
+}
